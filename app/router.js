@@ -7,6 +7,11 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('about');
+  this.route('dungeon', function() {
+    this.route('shatters');
+    this.route('lost_halls');
+  });
 });
 
 export default Router;

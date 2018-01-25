@@ -1,0 +1,9 @@
+<div class="btn-group" data-toggle="buttons">
+	{{#each model as |dungeon|}}
+		<label class="btn btn-primary">
+    		<input type="radio" onClick={{action "loadDungeon" dungeon.url}}> <img src={{dungeon.img}}>
+  		</label>
+	{{/each}}
+</div>
+
+{{outlet}}
