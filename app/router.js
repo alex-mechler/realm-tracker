@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('shatters');
     this.route('lost_halls');
   });
+  this.route('loot');
 });
 
 export default Router;

@@ -17,6 +17,7 @@ export default Component.extend({
 				}
 			}
 			Ember.getOwner(this).lookup('router:main').transitionTo('dungeon');
+			Notify.info("saved");
 		},
 		cancel(){
 			Ember.getOwner(this).lookup('router:main').transitionTo('dungeon');
