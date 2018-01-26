@@ -1,2 +1,11 @@
+.col-sm-4{
+	  text-align: center !important;
+	  padding-left: 2.5% !important;
+	  padding-right: 2.5% !important;
+};
+
+.confirm-buttons{
+	padding-left: 5% !important;
+}
 @import "variables";
 @import "ember-bootstrap/bootstrap";
