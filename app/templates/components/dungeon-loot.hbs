@@ -1,5 +1,13 @@
-<h1> LOOTS </h1>
+<h2>{{loot.name}}</h2>
 
-{{loot.cyan}}
+<h4>Cyan</h4>
+{{#bs-button-group
+  value=cyanLoot
+  type="checkbox"
+  onChange=(action (mut cyanLoot)) as |bg|}}
+	{{#each loot.cyan as |item|}}
+		{{#bg.button value=item}}{{item}}{{/bg.button}}
+  	{{/each}}
+{{/bs-button-group}}
 
-{{yield}}
+{{#bs-button onClick=(action "save")}}Save{{/bs-button}}
