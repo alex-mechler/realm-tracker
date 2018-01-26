@@ -6,8 +6,8 @@
   type="checkbox"
   onChange=(action (mut cyanLoot)) as |bg|}}
 	{{#each loot.cyan as |item|}}
-		{{#bg.button value=item}}{{item}}{{/bg.button}}
+		{{#bg.button value=item}}{{/bg.button}}
   	{{/each}}
 {{/bs-button-group}}
 
-{{#bs-button onClick=(action "save")}}Save{{/bs-button}}
+{{#bs-button onClick=(action "save" cyanLoot)}}Save{{/bs-button}}
