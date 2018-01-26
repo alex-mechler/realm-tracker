@@ -6,7 +6,7 @@ export default Component.extend({
 			
 		},
 		cancel(){
-			
+			Ember.getOwner(this).lookup('router:main').transitionTo('dungeon');
 		}
 	}
 });
