@@ -1,9 +1,13 @@
-<div class="btn-group" data-toggle="buttons">
-	{{#each model as |dungeon|}}
-		<label class="btn btn-primary">
-    		<input type="radio" onClick={{action "loadDungeon" dungeon.url}}> <img src={{dungeon.img}}>
-  		</label>
-	{{/each}}
-</div>
+{{#bs-button-group
+  value=buttonGroupValue2
+  type="radio" 
+  as |bg|}}
+  	{{#each model as |dungeon|}}
+ 		{{#bg.button onClick=(action "loadDungeon" dungeon.url)}}<img src={{dungeon.img}}>{{/bg.button}}
+  	{{/each}}
+{{/bs-button-group}}
+<p>You selected: {{buttonGroupValue2}}</p>
+
+
 
 {{outlet}}
