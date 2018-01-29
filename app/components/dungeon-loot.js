@@ -1,12 +1,13 @@
 import Component from '@ember/component';
+import { getOwner } from '@ember/application';
 
 export default Component.extend({
 	actions:{
-		save(cyan, blue, red, orange, white){
+		save(){
 			let storage = window.localStorage;
-   			for (let i = 0, j = arguments.length; i < j; i++){
-   				if(typeof(arguments[i]) !== 'undefined' && arguments[i] != null){
-   					arguments[i].forEach(function(i){
+			for (let i = 0, j = arguments.length; i < j; i++){
+				if(typeof(arguments[i]) !== 'undefined' && arguments[i] != null){
+					arguments[i].forEach(function(i){
 						if(storage.getItem(i) === null){
 							storage.setItem(i, 1);
 						}else{
@@ -16,11 +17,10 @@ export default Component.extend({
 					});
 				}
 			}
-			Ember.getOwner(this).lookup('router:main').transitionTo('dungeon');
-			Notify.info("saved");
+			getOwner(this).lookup('router:main').transitionTo('dungeon');
 		},
 		cancel(){
-			Ember.getOwner(this).lookup('router:main').transitionTo('dungeon');
+			getOwner(this).lookup('router:main').transitionTo('dungeon');
 		}
 	}
 });
